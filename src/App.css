@@ -82,6 +82,20 @@ p {
     align-items: center;
 }
 
+.know-your-weather {
+    color: #ad2121; /* Specify the color you want */
+    font-size: 50px; /* Adjust the font size as needed */
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center; /* Center the text */
+    margin-top: 50px;
+    margin-left: 35%;
+    display: flex;
+    position:absolute;
+    justify-content: center;
+    align-items: center; /* Adjust the top margin as needed */
+}
+
+
 @media only screen and (max-width: 600px) {
     .search {
         padding: 20px 15%;

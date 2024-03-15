@@ -31,51 +31,54 @@ const App = () => {
             setQuery('');
         }
     };
-    
-    
 
     return (
-        <div className='main-container'>
-            <input
-                type='text'
-                className='search'
-                placeholder='Search...'
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyPress={search}
-            />
+        <>
+            {/* <div className='know-your-weather'>
+                Know your weather
+            </div> */}
+            <div className='main-container'>
+                <input
+                    type='text'
+                    className='search'
+                    placeholder='Know your wheather....'
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyPress={search}
+                />
 
-            {placeNotFound && (
-                <div className='city'>
-                    <h2 className='city-name'>Place not found</h2>
-                </div>
-            )}
-
-            {weather.main && !placeNotFound && (
-                <div className='city'>
-                    <h2 className='city-name'>
-                        <span>{weather.name}</span>
-                        <sup>{weather.sys.country}</sup>
-                    </h2>
-
-                    <div className='city-temp'>
-                        {Math.round(weather.main.temp)}
-                        <sup>&deg;C</sup>
+                {placeNotFound && (
+                    <div className='city'>
+                        <h2 className='city-name'>Place not found</h2>
                     </div>
+                )}
 
-                    <div className='info'>
-                        <img
-                            className='city-icon'
-                            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-                            alt={weather.weather[0].description}
-                            key={weather.weather[0].icon}
-                        />
+                {weather.main && !placeNotFound && (
+                    <div className='city'>
+                        <h2 className='city-name'>
+                            <span>{weather.name}</span>
+                            <sup>{weather.sys.country}</sup>
+                        </h2>
 
-                        <p>{weather.weather[0].description}</p>
+                        <div className='city-temp'>
+                            {Math.round(weather.main.temp)}
+                            <sup>&deg;C</sup>
+                        </div>
+
+                        <div className='info'>
+                            <img
+                                className='city-icon'
+                                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                                alt={weather.weather[0].description}
+                                key={weather.weather[0].icon}
+                            />
+
+                            <p>{weather.weather[0].description}</p>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </>
     );
 };
 
